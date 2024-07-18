@@ -80,10 +80,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (dateInput && startTimeInput && endTimeInput) {
                 const datesTextarea = document.getElementById('dates');
-                datesTextarea.value += `${dateInput} ${startTimeInput}-${endTimeInput}\n`;
-                document.getElementById('dateInput').value = '';
-                document.getElementById('startTimeInput').value = '';
-                document.getElementById('endTimeInput').value = '';
+		datesTextarea.value += `${dateInput} ${startTimeInput}-${endTimeInput}\n`;
+		//連続入力しやすいように、あえて項目リセットしない
+                //document.getElementById('dateInput').value = '';
+                //document.getElementById('startTimeInput').value = '';
+                //document.getElementById('endTimeInput').value = '';
             } else {
                 alert('すべてのフィールドを入力してください。');
             }
