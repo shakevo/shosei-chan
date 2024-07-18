@@ -56,9 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="小生さんは色んな日程を合わせる出欠管理に使えるツールです。飲み会、会議、レジャー、サークル、歓送迎会、人と人が集まる時のスケジュール調整に使ってください。">
+    <meta name="description" content="小生さんは出欠管理に使えるツールです。飲み会、会議、レジャー、サークル、歓送迎会、人と人が集まる時のスケジュール調整に使ってください。">
     <link rel="stylesheet" href="styles.css">
-    <title>小生ちゃん</title>
+    <title>小生ちゃん - スケジュール調整/出欠管理ツール</title>
+
+    <!-- フォント指定 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+
     <script>
         function processDates() {
             const datesTextarea = document.getElementById('dates');
@@ -85,21 +91,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
 </head>
 <body>
-    <h1>小生ちゃん</h1>
+    <h1>小生ちゃん - スケジュール調整/出欠管理ツール</h1>
+    <p>イベントを作って、公開して、みんなと予定を合わせよう</p>
+    <br>
     <form method="POST" onsubmit="processDates()">
         <label for="event_name">イベント名</label>
         <input type="text" id="event_name" name="event_name" required><br>
 
-        <label for="memo">説明</label>
+        <label for="memo">主催コメント</label>
         <textarea id="memo" name="memo"></textarea><br>
 
         <label for="dateInput">何日？</label>
         <input type="date" id="dateInput"><br>
 
-        <label for="startTimeInput">いつから</label>
+        <label for="startTimeInput">いつから？</label>
         <input type="time" id="startTimeInput"><br>
 
-        <label for="endTimeInput">いつまで</label>
+        <label for="endTimeInput">いつまで？</label>
         <input type="time" id="endTimeInput"><br>
 
         <button type="button" onclick="addDateTime()">追加</button><br><br>

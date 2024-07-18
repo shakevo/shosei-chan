@@ -51,6 +51,7 @@ $responses = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <title><?php echo htmlspecialchars($event['event_name'], ENT_QUOTES, 'UTF-8'); ?> の調整状況 - 小生ちゃん</title>
     <link rel="stylesheet" href="styles.css">
     <script src="appo.js"></script>
@@ -63,7 +64,7 @@ $responses = $stmt->fetchAll();
         <label for="name">あなたの名前</label>
         <input type="text" id="name" name="name" required>
         <br>
-    	<h2>候補日一覧</h2>
+        <h2>候補日一覧</h2>
         <div class="table-responsive">
             <table>
                 <tr>
@@ -75,8 +76,8 @@ $responses = $stmt->fetchAll();
                 <?php foreach ($dates as $date): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($date['date'], ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php echo htmlspecialchars($date['start_time'], ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php echo htmlspecialchars($date['end_time'], ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php echo htmlspecialchars(date('H:i', strtotime($date['start_time'])), ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php echo htmlspecialchars(date('H:i', strtotime($date['end_time'])), ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                         <select name="responses[<?php echo $date['id']; ?>]" required>
                             <option value="〇">〇</option>
@@ -98,7 +99,7 @@ $responses = $stmt->fetchAll();
                 <th>名前</th>
                 <?php foreach ($dates as $date): ?>
                 <th>
-                <?php echo htmlspecialchars($date['date'] . " " . $date['start_time'] . " - " . $date['end_time'], ENT_QUOTES, 'UTF-8'); ?>
+                <?php echo htmlspecialchars($date['date'] . " " . date('H:i', strtotime($date['start_time'])) . "-" . date('H:i', strtotime($date['end_time'])), ENT_QUOTES, 'UTF-8'); ?>
                 </th>
                 <?php endforeach; ?>
             </tr>
