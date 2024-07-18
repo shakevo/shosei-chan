@@ -5,5 +5,5 @@ function copyToClipboard() {
     dummy.select();
     document.execCommand('copy');
     document.body.removeChild(dummy);
-    alert('URLがクリップボードにコピーされました。');
+    alert('URLをコピーしました！ 参加者に共有すると出欠入力をしてもらうことが出来ます。');
 }
