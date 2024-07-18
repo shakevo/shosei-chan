@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <button type="button" onclick="addDateTime()">追加</button><br><br>
 
-        <label for="dates">日程候補:</label>
+        <label for="dates">日程候補</label>
         <textarea id="dates" placeholder="例: 2024-07-07 09:00-14:00 (改行で複数候補日を入力)" required></textarea><br>
 
         <input type="hidden" id="processedDates" name="processed_dates">

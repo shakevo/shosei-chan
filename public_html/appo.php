@@ -117,7 +117,7 @@ $responses = $stmt->fetchAll();
     </div>
 
     <button type="button" onclick="copyToClipboard()">この募集をシェア</button>
-    <button type="button" onclick="location.href='https://test.sujico.net/'">トップにもどる</button>
+    <button type="button" onclick="location.href='https://trash-shosei.comilky.com/'">新しい募集を作る</button>
 </body>
 </html>
 
