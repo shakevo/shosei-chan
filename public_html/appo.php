@@ -71,7 +71,7 @@ $responses = $stmt->fetchAll();
                     <th>日程</th>
                     <th>いつから</th>
                     <th>いつまで</th>
-                    <th>参加可否</th>
+                    <th>出欠</th>
                 </tr>
                 <?php foreach ($dates as $date): ?>
                 <tr>
